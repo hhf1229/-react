@@ -1,0 +1,14 @@
+.container{
+  width: 100px;
+  margin:100px auto;
+}
+.exit{
+  opacity: 1;
+}
+.exit-active{
+  opacity: 0;
+  transition:1s;
+}
+.exit-done{
+  display:none;
+}
