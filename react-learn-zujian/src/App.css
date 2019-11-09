@@ -1,14 +1,27 @@
-.container{
-  width: 100px;
-  margin:100px auto;
-}
+
 .exit{
-  opacity: 1;
+  transform-origin: left top
+}
+.appear{
+  transform-origin:0 0;
+  transform:scale(0);
+}
+.appear-done{
+  transform:scale(1);
+  transition:.5s;
 }
 .exit-active{
-  opacity: 0;
-  transition:1s;
+  transform:scale(0);
+  transition:.5s;
 }
 .exit-done{
   display:none;
+}
+.enter{
+  transform-origin: 0 0;
+  transform:scale(0);
+}
+.enter-active{
+  transform:scale(1);
+  transition:.5s;
 }
