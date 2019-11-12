@@ -2,13 +2,10 @@
   width: 100px;
   margin:100px auto;
 }
-.exit{
-  opacity: 1;
+.enter,.exit-active,.exit-done{
+  opacity:0
 }
-.exit-active{
-  opacity: 0;
-  transition:1s;
+.enter-active{
+  opacity:1;
 }
-.exit-done{
-  display:none;
-}
+
