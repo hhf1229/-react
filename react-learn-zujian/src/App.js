@@ -1,32 +1,22 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import Personal from './Personal'
+import Login from './Login'
+import Home from './Home'
+import ProtecedRouter from './ProtecedRouter'
 export default function App() {
-  function User() {
-    return <div>
-      <h1>用户界面</h1>
-      <Link to='/user/updata'>去更新页面</Link>
-      <Link to='/user/info'>去信息页面</Link>
-      <div style={{
-        width: 500,
-        height: 500,
-        border: '1px solid black',
-        background: 'lightblue',
-        margin: '0 auto'
-      }}>
-          <Route path='/user/updata'  component={UserUpdata} />
-        <Route path='/user/info'  component={UserInfo} />
-      </div>
-    </div>
-  }
-  function UserUpdata() {
-    return <h1>修改信息</h1>
-  }
-  function UserInfo() {
-    return <h1>学生信息</h1>
-  }
   return (
     <Router>
-      <Route to='/user' exact component={User} />
+      <ul>
+        <li><Link to="/">首页</Link></li>
+        <li><Link to="/login">登录页</Link></li>
+        <li><Link to="/personal">个人中心</Link></li>
+      </ul>
+      <Switch>
+        <Route path='/login' component={Login} />
+        <ProtecedRouter path='/personal' component={Personal} />
+        <Route path='/' component={Home} />
+      </Switch>
     </Router>
   )
 }
